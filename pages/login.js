@@ -36,6 +36,7 @@ const Login = () => {
                   <p className="color-white fs-40 font-weight-600">
                     <span>
                       <Image
+                        alt="Seal of Maharashtra"
                         className="m-r-18"
                         src={SealOfMaharashtra}
                         width={80}
@@ -58,7 +59,7 @@ const Login = () => {
                         },
                       })}
                     />
-                    <label for="floatingInput">अर्ज क्रमांक</label>
+                    <label htmlFor="floatingInput">अर्ज क्रमांक</label>
                   </div>
                   <div className="d-grid">
                     <a
@@ -114,7 +115,7 @@ const Login = () => {
                             condition={errors.email}
                             value={errors.email?.message}
                           />
-                          <label for="floatingInput">ईमेल</label>
+                          <label htmlFor="floatingInput">ईमेल</label>
                         </div>
                         <div className="form-floating mb-3">
                           <input
@@ -137,7 +138,7 @@ const Login = () => {
                             condition={errors.password}
                             value={errors.password?.message}
                           />
-                          <label for="floatingPassword">पासवर्ड</label>
+                          <label htmlFor="floatingPassword">पासवर्ड</label>
                         </div>
                         <div className="d-grid">
                           <a
