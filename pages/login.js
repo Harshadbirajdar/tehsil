@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import Image from "next/image";
-import SealOfMaharashtra from "../assets/seal_of_maharashtra.png";
+import SealOfMaharashtra from "../public/Seal_of_Maharashtra.png";
 import Error from "../components/Error";
 const Login = () => {
   const {
