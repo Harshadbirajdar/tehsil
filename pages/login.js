@@ -97,7 +97,9 @@ const Login = () => {
                         <div className="form-floating mb-3">
                           <input
                             id="floatingInput"
-                            className="form-control"
+                            className={`form-control ${
+                              errors.email && "invalid"
+                            }`}
                             placeholder="ईमेल"
                             {...register("email", {
                               required: {
@@ -121,7 +123,9 @@ const Login = () => {
                           <input
                             id="floatingPassword"
                             placeholder="पासवर्ड"
-                            className="form-control"
+                            className={`form-control ${
+                              errors.password && "invalid"
+                            }`}
                             {...register("password", {
                               required: {
                                 message: "पासवर्ड आवश्यक आहे",
