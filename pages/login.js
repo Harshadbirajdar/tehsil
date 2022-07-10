@@ -9,7 +9,7 @@ const Login = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      email: "",
+      phoneNumber: "",
       password: "",
     },
   });
@@ -55,7 +55,7 @@ const Login = () => {
                       {...register2("number", {
                         required: true,
                         pattern: {
-                          message: "Please enter a valid email",
+                          message: "Please enter a valid phoneNumber",
                         },
                       })}
                     />
@@ -98,29 +98,29 @@ const Login = () => {
                           <input
                             id="floatingInput"
                             className={`form-control ${
-                              errors.email && "invalid"
+                              errors.phoneNumber && "invalid"
                             }`}
-                            placeholder="ईमेल"
-                            {...register("email", {
+                            placeholder="मोबाईल नंबर"
+                            {...register("phoneNumber", {
                               required: {
-                                message: "ईमेल आवश्यक आहे",
+                                message: "मोबाईल नंबर आवश्यक आहे",
                                 value: true,
                               },
                               pattern: {
-                                value:
-                                  /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
-                                message: "कृपया वैध ईमेल प्रविष्ट करा",
+                                value: /(\d{5})(\d{5})/,
+                                message: "कृपया वैध मोबाईल क्रमांक टाका",
                               },
                             })}
                           />
                           <Error
-                            condition={errors.email}
-                            value={errors.email?.message}
+                            condition={errors.phoneNumber}
+                            value={errors.phoneNumber?.message}
                           />
-                          <label htmlFor="floatingInput">ईमेल</label>
+                          <label htmlFor="floatingInput">मोबाईल नंबर</label>
                         </div>
                         <div className="form-floating mb-3">
                           <input
+                            type="password"
                             id="floatingPassword"
                             placeholder="पासवर्ड"
                             className={`form-control ${
