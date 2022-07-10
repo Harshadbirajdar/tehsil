@@ -1,6 +1,6 @@
 import axiosInstant from "../../helper/axios";
 import { LOGIN_FAIL, LOGIN_START, LOGIN_SUCCESS } from "./action.type";
-
+import { toast } from "react-toastify";
 const loginStart = () => ({
   type: LOGIN_START,
 });
@@ -19,12 +19,14 @@ export const login = (user) => {
   return (dispatch) => {
     dispatch(loginStart());
     axiosInstant
-      .post("/login", user)
+      .post("/officer-login", user)
       .then((res) => {
+        toast.success("लॉगिन यशस्वी");
         dispatch(loginSuccess(res.data));
       })
       .catch((err) => {
-        dispatch(loginFailed(err.response.data));
+        toast.error(err.response.data?.msg);
+        dispatch(loginFailed(err.response?.data));
       });
   };
 };

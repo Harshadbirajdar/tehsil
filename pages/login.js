@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import Image from "next/image";
 import SealOfMaharashtra from "../public/Seal_of_Maharashtra.png";
 import Error from "../components/Error";
+import { login } from "../redux/action/user";
+import { useDispatch } from "react-redux";
 const Login = () => {
   const {
     register,
@@ -22,8 +24,9 @@ const Login = () => {
       number: "",
     },
   });
+  const dispatch = useDispatch();
   const onLogin = (data) => {
-    console.log(data);
+    dispatch(login(data));
   };
   return (
     <div>
